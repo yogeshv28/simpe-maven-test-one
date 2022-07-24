@@ -1,16 +1,10 @@
-pipeline {
-    agent any
+pipeline:
+     agent: any
+     stages:
+         - stage: "Maven-App Unit Tests"
+           steps: 
+              - echo "Execute unit Tests"
 
-    stages {
-        stage('Maven-App Unit Tests') {
-            steps {
-                echo "Unit Test Execution"
-            } 
-        }
-        stage('Maven-App Package') {
-            steps {
-                echo "crete jar file"
-            } 
-        }
-    }
-}
+         - stage: "Maven-App Package"
+           steps: 
+              - echo "Create jar file"
